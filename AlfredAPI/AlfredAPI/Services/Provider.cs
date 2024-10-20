@@ -2,10 +2,8 @@
 using CUE4Parse.Compression;
 using CUE4Parse.FileProvider;
 using CUE4Parse.MappingsProvider;
-using CUE4Parse.UE4.AssetRegistry;
 using CUE4Parse.UE4.Readers;
 using CUE4Parse.UE4.Versions;
-using CUE4Parse.UE4.VirtualFileSystem;
 using Serilog;
 using System.Diagnostics;
 
@@ -17,12 +15,14 @@ namespace AlfredAPI.AlfredAPI.Services
 
         public static async Task Mount()
         {
+            // Download And Install Required DLL Files, Aswell As Initialize Both DLLS!
             await OodleInit();
             logger.Information($"Successfully Initialized Oodle!");
 
             await ZLibInit();
             logger.Information($"Successfully Initialized ZLib!");
 
+            // Grab Manifest, Decrypt The Files, Register Files!
             var manifestInfo = await Manifest.GrabInfo();
             if (manifestInfo == null || Global.Manifest?.BuildVersion == manifestInfo.BuildVersion) return;
 
@@ -43,6 +43,7 @@ namespace AlfredAPI.AlfredAPI.Services
                 p.RegisterVfs(file.Name, new Stream[] { file.GetStream() }, it => new FStreamArchive(it, manifest.FileManifests.FirstOrDefault(x => x.Name == it)?.GetStream()!, p.Versions));
             }));
 
+            // Grab Mappings And Set Our Providers "MappingsContainer" To Our Mappings We Downloaded!
             var attempt = 0;
             var mappingPath = await Mappings.Grab(manifest.BuildVersion);
             while (mappingPath == null)

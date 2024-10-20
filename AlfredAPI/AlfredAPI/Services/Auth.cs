@@ -13,7 +13,7 @@ namespace AlfredAPI.AlfredAPI.Services
             if (_cache != null) return _cache.AccessToken;
 
             await RefeshTokenAsync();
-            RunRefreshAsync((_cache?.ExpiresIn ?? 14400) - 5 * 600); // approximately 3 hours and 10 minutes
+            RunRefreshAsync((_cache?.ExpiresIn ?? 14400) - 5 * 600); // Approximately 3 Hours And 10 Minutes
             return _cache?.AccessToken;
         }
 
@@ -35,7 +35,7 @@ namespace AlfredAPI.AlfredAPI.Services
             var request = new HttpRequestMessage(HttpMethod.Post, "https://account-public-service-prod03.ol.epicgames.com/account/api/oauth/token")
             { Content = new FormUrlEncodedContent(new Dictionary<string, string> { { "grant_type", "client_credentials" }, { "token_type", "eg1" } }) };
 
-            request.Headers.Add("Authorization", "basic MzQ0NmNkNzI2OTRjNGE0NDg1ZDgxYjc3YWRiYjIxNDE6OTIwOWQ0YTVlMjVhNDU3ZmI5YjA3NDg5ZDMxM2I0MWE=");
+            request.Headers.Add("Authorization", "basic MzQ0NmNkNzI2OTRjNGE0NDg1ZDgxYjc3YWRiYjIxNDE6OTIwOWQ0YTVlMjVhNDU3ZmI5YjA3NDg5ZDMxM2I0MWE="); // Whos Auth Key You May Ask? IDK Got It On GitHub KEKW
             var response = await Global.Client.SendAsync(request);
 
             var content = await response.Content.ReadAsStringAsync();

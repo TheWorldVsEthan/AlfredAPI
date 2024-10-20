@@ -3,6 +3,8 @@ using Serilog.Events;
 using AlfredAPI.AlfredAPI;
 using AlfredAPI.Properties;
 using Serilog.Sinks.SystemConsole.Themes;
+using CUE4Parse.UE4.Assets.Exports;
+using Newtonsoft.Json;
 
 namespace AlfredAPI
 {
@@ -27,8 +29,39 @@ namespace AlfredAPI
             var totalFileCount = Global.Provider.Files.Count;
             Log.Information($"Successfully Loaded: {totalFileCount} Files!");
 
-            // await LoadAsset("FortniteGame/Plugins/GameFeatures/BRCosmetics/Content/Athena/Items/Cosmetics/Characters/Character_SteakSting");
+            await TestLoadAsset("FortniteGame/Plugins/GameFeatures/BRCosmetics/Content/Athena/Items/Cosmetics/Characters/Character_SteakSting"); // Really Just A Basic Example On How To Use CUE4Parse
             await Task.Delay(-1);
+        }
+
+        private static async Task TestLoadAsset(string assetPath)
+        {
+            // If No Asset Path Return Error
+            if (assetPath == null)
+            {
+                Log.Error("Invalid Asset Path!");
+            }
+
+            else
+            {
+                // Try To Load The Object, If False Return Error
+                if (!Global.Provider.TryLoadObject(assetPath, out UObject package))
+                {
+                    Log.Error($"Failed To Locate: {assetPath}");
+                }
+
+                else
+                {
+                    // Turn Our UObject Into Formatted JSON And Log It To Console
+                    var fullJson = JsonConvert.SerializeObject(package, Formatting.Indented);
+                    Console.WriteLine(fullJson);
+
+                    // WORKING ON MODEL For All Export Types
+
+                    // CosmeticModel cos = new CosmeticModel(package);
+                    // Log.Information($"Parsing: {assetPath}...");
+                    // Console.WriteLine("DisplayName: " + cos.DisplayName + " Description: " + cos.Description + " ShortDescription: " + cos.ShortDescription);
+                }
+            }
         }
 
         /*
