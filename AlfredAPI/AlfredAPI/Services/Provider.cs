@@ -71,7 +71,7 @@ namespace AlfredAPI.AlfredAPI.Services
         // TANK YOU https://github.com/TheNaeem/Solitude/blob/master/Solitude/Managers/Core.cs#L125
         public static async Task OodleInit()
         {
-            var oodlePath = Path.Combine("C:\\Users\\ethan\\Desktop\\Coding\\Projects\\C#\\AlfredAPI\\AlfredAPI\\bin\\Debug\\net8.0", OodleHelper.OODLE_DLL_NAME);
+            var oodlePath = Path.Combine("C:\\Users\\ethan\\Desktop\\Coding\\Projects\\C#\\AlfredAPI\\AlfredAPI\\bin\\Debug\\net8.0", OodleHelper.OODLE_DLL_NAME); // Chage These Paths!
             if (!File.Exists(oodlePath))
             {
                 await OodleHelper.DownloadOodleDllAsync(oodlePath);
@@ -83,7 +83,7 @@ namespace AlfredAPI.AlfredAPI.Services
         // Once Again, TANK YOU https://github.com/TheNaeem/Solitude/blob/master/Solitude/Managers/Core.cs#L136
         public static async Task ZLibInit()
         {
-            var dllPath = Path.Combine("C:\\Users\\ethan\\Desktop\\Coding\\Projects\\C#\\AlfredAPI\\AlfredAPI\\bin\\Debug\\net8.0", ZlibHelper.DLL_NAME);
+            var dllPath = Path.Combine("C:\\Users\\ethan\\Desktop\\Coding\\Projects\\C#\\AlfredAPI\\AlfredAPI\\bin\\Debug\\net8.0", ZlibHelper.DLL_NAME); // Chage These Paths!
             if (!File.Exists(dllPath))
             {
                 await ZlibHelper.DownloadDllAsync(dllPath);
