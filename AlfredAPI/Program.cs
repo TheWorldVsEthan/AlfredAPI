@@ -35,7 +35,8 @@ namespace AlfredAPI
             var totalFileCount = Global.Provider.Files.Count;
             Log.Information($"Successfully Loaded: {totalFileCount} Files!");
 
-            await TestLoadAsset("FortniteGame/Plugins/GameFeatures/BRCosmetics/Content/Athena/Items/Cosmetics/Characters/Character_SteakSting"); // Really Just A Basic Example On How To Use CUE4Parse
+            // await logAllFiles();
+            await TestLoadAsset("FortniteGame/Content/Athena/Items/Cosmetics/Characters/CID_A_198_Athena_Commando_M_CerealBox"); // Really Just A Basic Example On How To Use CUE4Parse
             await Task.Delay(-1);
         }
 
@@ -60,59 +61,29 @@ namespace AlfredAPI
                     // Pass Our UObject Threw Our Model To Parse Data
                     // STILL WORKING ON MODEL For All Export Types, Therefor May Break!
                     CosmeticModel cos = new CosmeticModel(package);
-                    Log.Information($"Parsing: {assetPath}...");
-                    Console.WriteLine("ExportType: " + cos.ExportType);
-                    Console.WriteLine("DisplayName: " + cos.DisplayName);
-                    Console.WriteLine("Description: " + cos.Description);
-                    Console.WriteLine("ShortDescription: " + cos.ShortDescription);
-                    Console.WriteLine("Rarity: " + cos.PreviewRarity);
-                    Console.WriteLine("Icon Path: " + cos.imagePath);
-                }
-            }
-        }
-
-        /*
-        private static async Task LoadAsset(string assetPath)
-        {
-            if (assetPath == null)
-            {
-                Log.Error("Invalid Asset Path!");
-            }
-             
-            else
-            {
-                if (!Global.Provider.TryLoadObject(assetPath, out UObject package))
-                {
-                    Log.Error($"Failed To Locate: {assetPath}");
-                }
-
-                else
-                {
-                    var fullJson = JsonConvert.SerializeObject(package, Formatting.Indented);
-                    Console.WriteLine(fullJson);
-                    // CosmeticModel cos = new CosmeticModel(package);
                     // Log.Information($"Parsing: {assetPath}...");
-                    // Console.WriteLine("DisplayName: " + cos.DisplayName + " Description: " + cos.Description + " ShortDescription: " + cos.ShortDescription);
+                    // Console.WriteLine("ExportType: " + cos.ExportType);
+                    // Console.WriteLine("DisplayName: " + cos.DisplayName);
+                    // Console.WriteLine("Description: " + cos.Description);
+                    // Console.WriteLine("ShortDescription: " + cos.ShortDescription);
+                    // Console.WriteLine("Rarity: " + cos.PreviewRarity);
+                    // Console.WriteLine("Icon Path: " + cos.imagePath);
                 }
             }
         }
-        */
 
-
-    }
-
-
-    // Will Prolly Add A Task TO Pre-Load Files -_('')-_
-    /*
-                       foreach (var file in Global.Provider.Files)
+        private static async Task logAllFiles()
+        {
+            foreach (var file in Global.Provider.Files)
             {
                 if (file.Value.ToString().StartsWith("FortniteGame/Content/Athena/Items/Cosmetics/Characters/"))
                 {
                     var gameFile = file.Value.ToString();
-                    var allObjects = Global.Provider.LoadAllObjects(gameFile);
+                    // var allObjects = Global.Provider.LoadAllObjects(gameFile);
                     // var fullJson = JsonConvert.SerializeObject(allObjects, Formatting.Indented);
                     Console.WriteLine("Loaded: " + gameFile);
                 }
             }
-           */
+        }
+    }
 }
