@@ -1,13 +1,10 @@
 ﻿using AlfredAPI.AlfredAPI;
+using AlfredAPI.Extensions;
 using CUE4Parse.UE4.Assets.Exports;
-using CUE4Parse.UE4.Assets.Exports.Texture;
 using CUE4Parse.UE4.Assets.Objects;
-using CUE4Parse.UE4.Objects.Core.i18N;
 using CUE4Parse.UE4.Objects.UObject;
-using CUE4Parse_Conversion.Textures;
-using Serilog;
-using SkiaSharp;
-using System.Diagnostics;
+using CUE4Parse.UE4.Objects.Core.i18N;
+using CUE4Parse.UE4.Assets.Exports.Texture;
 
 namespace AlfredAPI.Models
 {
@@ -62,7 +59,7 @@ namespace AlfredAPI.Models
 
                         catch (Exception ex)
                         {
-                            Console.WriteLine($"Failed to get map image: {ex.Message}");
+                            Console.WriteLine($"Failed To Get Asset Image: {ex.Message}");
                         }
 
                     }
@@ -90,7 +87,7 @@ namespace AlfredAPI.Models
 
                         catch (Exception ex)
                         {
-                            Console.WriteLine($"Failed to get map image: {ex.Message}");
+                            Console.WriteLine($"Failed To Get Asset Image: {ex.Message}");
                         }
 
                     }
@@ -120,35 +117,5 @@ namespace AlfredAPI.Models
         // public SKImage Icon { get; set; }
 
         // Tags And Other Stuff Will Be Added Later! (Or You Could Add It To A Commit) If You Want It Faster!
-    }
-
-
-    // https://github.com/TheNaeem/Solitude/blob/fa601ff754f6e5fca547dea73fc8c7f3d4fa0ee6/Solitude/Extensions/TextureExtensions.cs
-    public static class Extensions
-    {
-        public static void SaveToDisk(this UTexture2D texture, string outputDir)
-        {
-            try
-            {
-                var outputPath = Path.Join(outputDir, texture.Name + ".png");
-
-                var sw = Stopwatch.StartNew();
-
-                using var decoded = texture.Decode();
-                using var encoded = decoded?.Encode(SKEncodedImageFormat.Png, 100);
-                using var fs = File.Create(outputPath);
-                encoded?.AsStream().CopyTo(fs);
-
-                sw.Stop();
-
-                Log.Information("Successfully Exported {Texture} in {Milliseconds} ms", texture.Name, sw.ElapsedMilliseconds);
-            }
-
-            catch (Exception e)
-            {
-                Log.Error("Couldn't Export {Texture}", texture.Name);
-                Log.Error(e, string.Empty);
-            }
-        }
     }
 }

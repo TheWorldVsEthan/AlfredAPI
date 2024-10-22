@@ -36,7 +36,7 @@ namespace AlfredAPI
             Log.Information($"Successfully Loaded: {totalFileCount} Files!");
 
             // await logAllFiles();
-            await TestLoadAsset("FortniteGame/Content/Athena/Items/Cosmetics/Characters/CID_A_198_Athena_Commando_M_CerealBox"); // Really Just A Basic Example On How To Use CUE4Parse
+            await TestLoadAsset("FortniteGame/Content/Athena/Items/Cosmetics/Backpacks/BID_721_ScholarFemale"); // Really Just A Basic Example On How To Use CUE4Parse
             await Task.Delay(-1);
         }
 
@@ -61,13 +61,13 @@ namespace AlfredAPI
                     // Pass Our UObject Threw Our Model To Parse Data
                     // STILL WORKING ON MODEL For All Export Types, Therefor May Break!
                     CosmeticModel cos = new CosmeticModel(package);
-                    // Log.Information($"Parsing: {assetPath}...");
-                    // Console.WriteLine("ExportType: " + cos.ExportType);
-                    // Console.WriteLine("DisplayName: " + cos.DisplayName);
-                    // Console.WriteLine("Description: " + cos.Description);
-                    // Console.WriteLine("ShortDescription: " + cos.ShortDescription);
-                    // Console.WriteLine("Rarity: " + cos.PreviewRarity);
-                    // Console.WriteLine("Icon Path: " + cos.imagePath);
+                    Log.Information($"Parsing: {assetPath}...");
+                    Console.WriteLine("ExportType: " + cos.ExportType);
+                    Console.WriteLine("DisplayName: " + cos.DisplayName);
+                    Console.WriteLine("Description: " + cos.Description);
+                    Console.WriteLine("ShortDescription: " + cos.ShortDescription);
+                    Console.WriteLine("Rarity: " + cos.PreviewRarity);
+                    Console.WriteLine("Icon Path: " + cos.imagePath);
                 }
             }
         }
@@ -76,7 +76,7 @@ namespace AlfredAPI
         {
             foreach (var file in Global.Provider.Files)
             {
-                if (file.Value.ToString().StartsWith("FortniteGame/Content/Athena/Items/Cosmetics/Characters/"))
+                if (file.Value.ToString().StartsWith("FortniteGame/Content/Athena/Items/Cosmetics/Backpacks/"))
                 {
                     var gameFile = file.Value.ToString();
                     // var allObjects = Global.Provider.LoadAllObjects(gameFile);
