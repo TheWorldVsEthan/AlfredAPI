@@ -1,10 +1,11 @@
 # AlfredAPI
 AlfredAPI Is A Fortnite API In C# For Data Mining, Asset Extraction, ect...
+
 -----------------
 
-1. Clone the source code
+1. Clone The Source Code (Will Have To Add CUE4Parse And EpicManifestParser Yourself!)
 ```
-git clone https://github.com/TheWorldVsEthan/Alfredv3/ --recursive
+git clone https://github.com/TheWorldVsEthan/AlfredAPI --recursive
 ```
 
 
