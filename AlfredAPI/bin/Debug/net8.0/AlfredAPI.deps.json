@@ -9,6 +9,7 @@
       "AlfredAPI/1.0.0": {
         "dependencies": {
           "CUE4Parse": "1.1.1",
+          "CUE4Parse-Conversion": "1.1.1",
           "EpicManifestParser": "1.2.70-temp",
           "Serilog": "4.0.0",
           "Serilog.Sinks.Console": "6.0.0",
@@ -207,6 +208,25 @@
           }
         }
       },
+      "SharpGLTF.Core/1.0.0-alpha0023": {
+        "runtime": {
+          "lib/net5.0/SharpGLTF.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "SharpGLTF.Toolkit/1.0.0-alpha0023": {
+        "dependencies": {
+          "SharpGLTF.Core": "1.0.0-alpha0023"
+        },
+        "runtime": {
+          "lib/net5.0/SharpGLTF.Toolkit.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "SkiaSharp/2.88.8": {
         "dependencies": {
           "SkiaSharp.NativeAssets.Win32": "2.88.8",
@@ -364,6 +384,20 @@
           }
         }
       },
+      "CUE4Parse-Conversion/1.1.1": {
+        "dependencies": {
+          "CUE4Parse": "1.1.1",
+          "SharpGLTF.Core": "1.0.0-alpha0023",
+          "SharpGLTF.Toolkit": "1.0.0-alpha0023",
+          "SkiaSharp": "2.88.8"
+        },
+        "runtime": {
+          "CUE4Parse-Conversion.dll": {
+            "assemblyVersion": "1.1.1",
+            "fileVersion": "1.1.1.0"
+          }
+        }
+      },
       "EpicManifestParser/1.2.70-temp": {
         "dependencies": {
           "DotNetZip": "1.15.0",
@@ -496,6 +530,20 @@
       "path": "serilog.sinks.console/6.0.0",
       "hashPath": "serilog.sinks.console.6.0.0.nupkg.sha512"
     },
+    "SharpGLTF.Core/1.0.0-alpha0023": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MmFWb+8a187XKC4oEhZrAvpqB8Cs2Ma6cK87HNn8P91aIETSRVBTVHXcECE4BFk0gueAoooiBCyCdSdUm9fnrA==",
+      "path": "sharpgltf.core/1.0.0-alpha0023",
+      "hashPath": "sharpgltf.core.1.0.0-alpha0023.nupkg.sha512"
+    },
+    "SharpGLTF.Toolkit/1.0.0-alpha0023": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9umelLunAhr+Jj66GDDFrJlO5MQ0pZXRSZk3SfAeZD/iKu/qz7Nlpnh+e8IKqJI8DyU8jHCI9v6HFjazZiBfsQ==",
+      "path": "sharpgltf.toolkit/1.0.0-alpha0023",
+      "hashPath": "sharpgltf.toolkit.1.0.0-alpha0023.nupkg.sha512"
+    },
     "SkiaSharp/2.88.8": {
       "type": "package",
       "serviceable": true,
@@ -595,6 +643,11 @@
       "hashPath": "zstdsharp.port.0.8.1.nupkg.sha512"
     },
     "CUE4Parse/1.1.1": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CUE4Parse-Conversion/1.1.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

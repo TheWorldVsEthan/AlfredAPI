@@ -252,6 +252,35 @@
           }
         }
       },
+      "SharpGLTF.Core/1.0.0-alpha0023": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/SharpGLTF.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/SharpGLTF.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "SharpGLTF.Toolkit/1.0.0-alpha0023": {
+        "type": "package",
+        "dependencies": {
+          "SharpGLTF.Core": "1.0.0-alpha0023"
+        },
+        "compile": {
+          "lib/net5.0/SharpGLTF.Toolkit.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/SharpGLTF.Toolkit.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "SkiaSharp/2.88.8": {
         "type": "package",
         "dependencies": {
@@ -526,6 +555,22 @@
         },
         "runtime": {
           "bin/placeholder/CUE4Parse.dll": {}
+        }
+      },
+      "CUE4Parse-Conversion/1.1.1": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "CUE4Parse": "1.1.1",
+          "SharpGLTF.Core": "1.0.0-alpha0023",
+          "SharpGLTF.Toolkit": "1.0.0-alpha0023",
+          "SkiaSharp": "2.88.8"
+        },
+        "compile": {
+          "bin/placeholder/CUE4Parse-Conversion.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CUE4Parse-Conversion.dll": {}
         }
       },
       "EpicManifestParser/1.2.70-temp": {
@@ -865,6 +910,42 @@
         "lib/netstandard2.0/Serilog.Sinks.Console.xml",
         "serilog.sinks.console.6.0.0.nupkg.sha512",
         "serilog.sinks.console.nuspec"
+      ]
+    },
+    "SharpGLTF.Core/1.0.0-alpha0023": {
+      "sha512": "MmFWb+8a187XKC4oEhZrAvpqB8Cs2Ma6cK87HNn8P91aIETSRVBTVHXcECE4BFk0gueAoooiBCyCdSdUm9fnrA==",
+      "type": "package",
+      "path": "sharpgltf.core/1.0.0-alpha0023",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "glTF2Sharp.png",
+        "lib/net5.0/SharpGLTF.Core.dll",
+        "lib/net5.0/SharpGLTF.Core.xml",
+        "lib/netcoreapp3.1/SharpGLTF.Core.dll",
+        "lib/netcoreapp3.1/SharpGLTF.Core.xml",
+        "lib/netstandard2.0/SharpGLTF.Core.dll",
+        "lib/netstandard2.0/SharpGLTF.Core.xml",
+        "sharpgltf.core.1.0.0-alpha0023.nupkg.sha512",
+        "sharpgltf.core.nuspec"
+      ]
+    },
+    "SharpGLTF.Toolkit/1.0.0-alpha0023": {
+      "sha512": "9umelLunAhr+Jj66GDDFrJlO5MQ0pZXRSZk3SfAeZD/iKu/qz7Nlpnh+e8IKqJI8DyU8jHCI9v6HFjazZiBfsQ==",
+      "type": "package",
+      "path": "sharpgltf.toolkit/1.0.0-alpha0023",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "glTF2Sharp.png",
+        "lib/net5.0/SharpGLTF.Toolkit.dll",
+        "lib/net5.0/SharpGLTF.Toolkit.xml",
+        "lib/netcoreapp3.1/SharpGLTF.Toolkit.dll",
+        "lib/netcoreapp3.1/SharpGLTF.Toolkit.xml",
+        "lib/netstandard2.0/SharpGLTF.Toolkit.dll",
+        "lib/netstandard2.0/SharpGLTF.Toolkit.xml",
+        "sharpgltf.toolkit.1.0.0-alpha0023.nupkg.sha512",
+        "sharpgltf.toolkit.nuspec"
       ]
     },
     "SkiaSharp/2.88.8": {
@@ -1339,6 +1420,11 @@
       "path": "../../../../CUE4Parse/CUE4Parse/CUE4Parse.csproj",
       "msbuildProject": "../../../../CUE4Parse/CUE4Parse/CUE4Parse.csproj"
     },
+    "CUE4Parse-Conversion/1.1.1": {
+      "type": "project",
+      "path": "../../../../CUE4Parse/CUE4Parse-Conversion/CUE4Parse-Conversion.csproj",
+      "msbuildProject": "../../../../CUE4Parse/CUE4Parse-Conversion/CUE4Parse-Conversion.csproj"
+    },
     "EpicManifestParser/1.2.70-temp": {
       "type": "project",
       "path": "../../../../EpicManifestParser/src/EpicManifestParser/EpicManifestParser.csproj",
@@ -1348,6 +1434,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "CUE4Parse >= 1.1.1",
+      "CUE4Parse-Conversion >= 1.1.1",
       "EpicManifestParser >= 1.2.70-temp",
       "Serilog >= 4.0.0",
       "Serilog.Sinks.Console >= 6.0.0",
@@ -1381,6 +1468,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "C:\\Users\\ethan\\Desktop\\Coding\\CUE4Parse\\CUE4Parse-Conversion\\CUE4Parse-Conversion.csproj": {
+              "projectPath": "C:\\Users\\ethan\\Desktop\\Coding\\CUE4Parse\\CUE4Parse-Conversion\\CUE4Parse-Conversion.csproj"
+            },
             "C:\\Users\\ethan\\Desktop\\Coding\\CUE4Parse\\CUE4Parse\\CUE4Parse.csproj": {
               "projectPath": "C:\\Users\\ethan\\Desktop\\Coding\\CUE4Parse\\CUE4Parse\\CUE4Parse.csproj"
             },

@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlfredAPI", "AlfredAPI\AlfredAPI.csproj", "{83F7FCAF-DD6C-4F15-A2DC-249C6EAADABB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlfredAPI", "AlfredAPI\AlfredAPI.csproj", "{83F7FCAF-DD6C-4F15-A2DC-249C6EAADABB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CUE4Parse", "..\..\..\CUE4Parse\CUE4Parse\CUE4Parse.csproj", "{B8AE2F73-753E-435E-9AD0-AF51CE51D5D7}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CUE4Parse-Conversion", "..\..\..\CUE4Parse\CUE4Parse-Conversion\CUE4Parse-Conversion.csproj", "{101BB175-514B-4EBE-AAF2-8D81CB8A2EF3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EpicManifestParser", "..\..\..\EpicManifestParser\src\EpicManifestParser\EpicManifestParser.csproj", "{4FF3955F-9279-4CA0-BD90-4A69A5FA9C36}"
 EndProject
@@ -25,10 +23,6 @@ Global
 		{B8AE2F73-753E-435E-9AD0-AF51CE51D5D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8AE2F73-753E-435E-9AD0-AF51CE51D5D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8AE2F73-753E-435E-9AD0-AF51CE51D5D7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{101BB175-514B-4EBE-AAF2-8D81CB8A2EF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{101BB175-514B-4EBE-AAF2-8D81CB8A2EF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{101BB175-514B-4EBE-AAF2-8D81CB8A2EF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{101BB175-514B-4EBE-AAF2-8D81CB8A2EF3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4FF3955F-9279-4CA0-BD90-4A69A5FA9C36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4FF3955F-9279-4CA0-BD90-4A69A5FA9C36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FF3955F-9279-4CA0-BD90-4A69A5FA9C36}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "CxP+stx/U24=",
+  "dgSpecHash": "yLvAMctyoPw=",
   "success": true,
   "projectFilePath": "C:\\Users\\ethan\\Desktop\\Coding\\Projects\\C#\\AlfredAPI\\AlfredAPI\\AlfredAPI.csproj",
   "expectedPackageFiles": [
@@ -20,6 +20,8 @@
     "C:\\Users\\ethan\\.nuget\\packages\\oodle.net\\2.0.2\\oodle.net.2.0.2.nupkg.sha512",
     "C:\\Users\\ethan\\.nuget\\packages\\serilog\\4.0.0\\serilog.4.0.0.nupkg.sha512",
     "C:\\Users\\ethan\\.nuget\\packages\\serilog.sinks.console\\6.0.0\\serilog.sinks.console.6.0.0.nupkg.sha512",
+    "C:\\Users\\ethan\\.nuget\\packages\\sharpgltf.core\\1.0.0-alpha0023\\sharpgltf.core.1.0.0-alpha0023.nupkg.sha512",
+    "C:\\Users\\ethan\\.nuget\\packages\\sharpgltf.toolkit\\1.0.0-alpha0023\\sharpgltf.toolkit.1.0.0-alpha0023.nupkg.sha512",
     "C:\\Users\\ethan\\.nuget\\packages\\skiasharp\\2.88.8\\skiasharp.2.88.8.nupkg.sha512",
     "C:\\Users\\ethan\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.8\\skiasharp.nativeassets.macos.2.88.8.nupkg.sha512",
     "C:\\Users\\ethan\\.nuget\\packages\\skiasharp.nativeassets.win32\\2.88.8\\skiasharp.nativeassets.win32.2.88.8.nupkg.sha512",

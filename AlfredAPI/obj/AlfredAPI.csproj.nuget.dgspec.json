@@ -4,6 +4,84 @@
     "C:\\Users\\ethan\\Desktop\\Coding\\Projects\\C#\\AlfredAPI\\AlfredAPI\\AlfredAPI.csproj": {}
   },
   "projects": {
+    "C:\\Users\\ethan\\Desktop\\Coding\\CUE4Parse\\CUE4Parse-Conversion\\CUE4Parse-Conversion.csproj": {
+      "version": "1.1.1",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ethan\\Desktop\\Coding\\CUE4Parse\\CUE4Parse-Conversion\\CUE4Parse-Conversion.csproj",
+        "projectName": "CUE4Parse-Conversion",
+        "projectPath": "C:\\Users\\ethan\\Desktop\\Coding\\CUE4Parse\\CUE4Parse-Conversion\\CUE4Parse-Conversion.csproj",
+        "packagesPath": "C:\\Users\\ethan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ethan\\Desktop\\Coding\\CUE4Parse\\CUE4Parse-Conversion\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ethan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\ethan\\Desktop\\Coding\\CUE4Parse\\CUE4Parse\\CUE4Parse.csproj": {
+                "projectPath": "C:\\Users\\ethan\\Desktop\\Coding\\CUE4Parse\\CUE4Parse\\CUE4Parse.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "SharpGLTF.Core": {
+              "target": "Package",
+              "version": "[1.0.0-alpha0023, )"
+            },
+            "SharpGLTF.Toolkit": {
+              "target": "Package",
+              "version": "[1.0.0-alpha0023, )"
+            },
+            "SkiaSharp": {
+              "target": "Package",
+              "version": "[2.88.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\ethan\\Desktop\\Coding\\CUE4Parse\\CUE4Parse\\CUE4Parse.csproj": {
       "version": "1.1.1",
       "restore": {
@@ -248,6 +326,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "C:\\Users\\ethan\\Desktop\\Coding\\CUE4Parse\\CUE4Parse-Conversion\\CUE4Parse-Conversion.csproj": {
+                "projectPath": "C:\\Users\\ethan\\Desktop\\Coding\\CUE4Parse\\CUE4Parse-Conversion\\CUE4Parse-Conversion.csproj"
+              },
               "C:\\Users\\ethan\\Desktop\\Coding\\CUE4Parse\\CUE4Parse\\CUE4Parse.csproj": {
                 "projectPath": "C:\\Users\\ethan\\Desktop\\Coding\\CUE4Parse\\CUE4Parse\\CUE4Parse.csproj"
               },

@@ -5,11 +5,17 @@ using AlfredAPI.AlfredAPI;
 using AlfredAPI.Properties;
 using Serilog.Sinks.SystemConsole.Themes;
 using CUE4Parse.UE4.Assets.Exports;
+using CUE4Parse.UE4.AssetRegistry.Objects;
+using AlfredAPI.AlfredAPI.Services;
+using CUE4Parse.UE4.AssetRegistry;
 
 namespace AlfredAPI
 {
     public class Program
     {
+
+        public readonly List<FAssetData> AssetRegistry = [];
+
         // Basic Usage, Docs soon? Possibly Read The Code And Learn How to Use It??
         private static async Task Main()
         {
@@ -53,14 +59,14 @@ namespace AlfredAPI
                 {
                     // Pass Our UObject Threw Our Model To Parse Data
                     // STILL WORKING ON MODEL For All Export Types, Therefor May Break!
-
                     CosmeticModel cos = new CosmeticModel(package);
                     Log.Information($"Parsing: {assetPath}...");
-                    Console.WriteLine("ExportType: " + package.ExportType.ToString());
+                    Console.WriteLine("ExportType: " + cos.ExportType);
                     Console.WriteLine("DisplayName: " + cos.DisplayName);
                     Console.WriteLine("Description: " + cos.Description);
                     Console.WriteLine("ShortDescription: " + cos.ShortDescription);
                     Console.WriteLine("Rarity: " + cos.PreviewRarity);
+                    Console.WriteLine("Icon Path: " + cos.imagePath);
                 }
             }
         }
