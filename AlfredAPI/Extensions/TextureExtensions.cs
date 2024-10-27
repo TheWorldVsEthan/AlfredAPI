@@ -14,7 +14,6 @@ namespace AlfredAPI.Extensions
             try
             {
                 var outputPath = Path.Join(outputDir, texture.Name + ".png");
-
                 var sw = Stopwatch.StartNew();
 
                 using var decoded = texture.Decode();
@@ -23,8 +22,7 @@ namespace AlfredAPI.Extensions
                 encoded?.AsStream().CopyTo(fs);
 
                 sw.Stop();
-
-                Log.Information("Successfully Exported {Texture} in {Milliseconds} ms", texture.Name, sw.ElapsedMilliseconds);
+                Log.Information("Successfully Exported {Texture} In {Milliseconds} ms", texture.Name, sw.ElapsedMilliseconds);
             }
 
             catch (Exception e)

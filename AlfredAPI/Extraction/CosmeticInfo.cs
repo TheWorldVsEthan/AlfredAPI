@@ -5,7 +5,7 @@ using CUE4Parse.UE4.Assets.Exports;
 
 namespace AlfredAPI.Extraction
 {
-    // Will Log Parse Data To The Console! 
+    // Will Log Parsed Data To The Console! 
     public static class CosmeticInfo
     {
         public static async Task LoadAsset(string assetPath)

@@ -53,7 +53,7 @@ namespace AlfredAPI.Models
                         {
                             if (a != null)
                             {
-                                a?.SaveToDisk("C:\\Users\\ethan\\Desktop\\New folder"); // "C:\\Users\\ethan\\Desktop\\New folder" Is Just For Testing
+                                a?.SaveToDisk("C:\\Users\\ethan\\Desktop\\AlfredTesting"); // "C:\\Users\\ethan\\Desktop\\New folder" Is Just For Testing
                             }                                                           // Will Make API Create "Exports" Folder
                         }
 
@@ -81,7 +81,7 @@ namespace AlfredAPI.Models
                         {
                             if (a != null)
                             {
-                                a?.SaveToDisk("C:\\Users\\ethan\\Desktop\\New folder"); // "C:\\Users\\ethan\\Desktop\\New folder" Is Just For Testing
+                                a?.SaveToDisk("C:\\Users\\ethan\\Desktop\\AlfredTesting"); // "C:\\Users\\ethan\\Desktop\\New folder" Is Just For Testing
                             }                                                           // Will Make API Create "Exports" Folder
                         }
 

@@ -2,6 +2,7 @@
 using CUE4Parse.FileProvider;
 using CUE4Parse.UE4.Versions;
 using EpicManifestParser.Objects;
+using CUE4Parse.UE4.Assets.Exports.Sound;
 
 namespace AlfredAPI.AlfredAPI
 {
@@ -16,5 +17,8 @@ namespace AlfredAPI.AlfredAPI
             UseCookies = false,
             AutomaticDecompression = DecompressionMethods.All,
         });
+
+        // So We Can Access "audio.Name" Globally
+        public static USoundWave soundWave;
     }
 }
