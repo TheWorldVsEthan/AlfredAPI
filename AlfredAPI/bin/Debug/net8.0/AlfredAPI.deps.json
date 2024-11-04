@@ -9,12 +9,13 @@
       "AlfredAPI/1.0.0": {
         "dependencies": {
           "CUE4Parse": "1.1.1",
+          "CUE4Parse-Conversion": "1.1.1",
           "EpicManifestParser": "1.2.70-temp",
+          "FFMpegCore": "5.1.0",
           "Serilog": "4.0.0",
           "Serilog.Sinks.Console": "6.0.0",
           "SharpDX": "4.2.0",
-          "SkiaSharp": "2.88.8",
-          "CUE4Parse-Conversion": "1.1.1.0"
+          "SkiaSharp": "2.88.8"
         },
         "runtime": {
           "AlfredAPI.dll": {}
@@ -90,6 +91,18 @@
           }
         }
       },
+      "FFMpegCore/5.1.0": {
+        "dependencies": {
+          "Instances": "3.0.0",
+          "System.Text.Json": "7.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/FFMpegCore.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.0"
+          }
+        }
+      },
       "GenericReader/1.0.3": {
         "runtime": {
           "lib/net5.0/GenericReader.dll": {
@@ -103,6 +116,14 @@
           "lib/netstandard2.0/UE4Config.dll": {
             "assemblyVersion": "0.7.2.97",
             "fileVersion": "0.7.2.97"
+          }
+        }
+      },
+      "Instances/3.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/Instances.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -321,6 +342,25 @@
           "lib/netstandard1.1/SharpDX.dll": {
             "assemblyVersion": "4.2.0.0",
             "fileVersion": "4.2.0.0"
+          }
+        }
+      },
+      "SharpGLTF.Core/1.0.0-alpha0023": {
+        "runtime": {
+          "lib/net5.0/SharpGLTF.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "SharpGLTF.Toolkit/1.0.0-alpha0023": {
+        "dependencies": {
+          "SharpGLTF.Core": "1.0.0-alpha0023"
+        },
+        "runtime": {
+          "lib/net5.0/SharpGLTF.Toolkit.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -917,6 +957,12 @@
           "System.Text.Encoding": "4.3.0"
         }
       },
+      "System.Text.Encodings.Web/7.0.0": {},
+      "System.Text.Json/7.0.2": {
+        "dependencies": {
+          "System.Text.Encodings.Web": "7.0.0"
+        }
+      },
       "System.Text.RegularExpressions/4.3.0": {
         "dependencies": {
           "System.Runtime": "4.3.0"
@@ -1042,6 +1088,20 @@
           }
         }
       },
+      "CUE4Parse-Conversion/1.1.1": {
+        "dependencies": {
+          "CUE4Parse": "1.1.1",
+          "SharpGLTF.Core": "1.0.0-alpha0023",
+          "SharpGLTF.Toolkit": "1.0.0-alpha0023",
+          "SkiaSharp": "2.88.8"
+        },
+        "runtime": {
+          "CUE4Parse-Conversion.dll": {
+            "assemblyVersion": "1.1.1",
+            "fileVersion": "1.1.1.0"
+          }
+        }
+      },
       "EpicManifestParser/1.2.70-temp": {
         "dependencies": {
           "DotNetZip": "1.15.0",
@@ -1051,14 +1111,6 @@
           "EpicManifestParser.dll": {
             "assemblyVersion": "1.2.70-temp",
             "fileVersion": "1.2.70.0"
-          }
-        }
-      },
-      "CUE4Parse-Conversion/1.1.1.0": {
-        "runtime": {
-          "CUE4Parse-Conversion.dll": {
-            "assemblyVersion": "1.1.1.0",
-            "fileVersion": "1.1.1.0"
           }
         }
       }
@@ -1091,6 +1143,13 @@
       "path": "dotnetzip/1.15.0",
       "hashPath": "dotnetzip.1.15.0.nupkg.sha512"
     },
+    "FFMpegCore/5.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cCzfCElrq9IziByiho3oeK/T2hDfM0jjMQmo22cLoAt7bptNNhEiRhF9X0lKwLBoK9vjZKn06+gaUfbfmS9m3Q==",
+      "path": "ffmpegcore/5.1.0",
+      "hashPath": "ffmpegcore.5.1.0.nupkg.sha512"
+    },
     "GenericReader/1.0.3": {
       "type": "package",
       "serviceable": true,
@@ -1104,6 +1163,13 @@
       "sha512": "sha512-ZjCEAqkSSr2Z8Rp82wo6ME98WJ0P2DyKrr+11X2KqZ/q/rzloyv6rJ+m45J2qWY1Piu2E9XcJ2gvRHQCapuTQQ==",
       "path": "infrablack.ue4config/0.7.2.97",
       "hashPath": "infrablack.ue4config.0.7.2.97.nupkg.sha512"
+    },
+    "Instances/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wlZ0V+S7X7kMKbjC7EZJf5A1FNlldQrS0tKMNXP1Ued/6XCo6t5kpFDS3X72cd+SGaX+q+FOlWO7r18GlxcKAQ==",
+      "path": "instances/3.0.0",
+      "hashPath": "instances.3.0.0.nupkg.sha512"
     },
     "K4os.Compression.LZ4/1.3.8": {
       "type": "package",
@@ -1321,6 +1387,20 @@
       "sha512": "sha512-3pv0LFMvfK/dv1qISJnn8xBeeT6R/FRvr0EV4KI2DGsL84Qlv6P7isWqxGyU0LCwlSVCJN3jgHJ4Bl0KI2PJww==",
       "path": "sharpdx/4.2.0",
       "hashPath": "sharpdx.4.2.0.nupkg.sha512"
+    },
+    "SharpGLTF.Core/1.0.0-alpha0023": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MmFWb+8a187XKC4oEhZrAvpqB8Cs2Ma6cK87HNn8P91aIETSRVBTVHXcECE4BFk0gueAoooiBCyCdSdUm9fnrA==",
+      "path": "sharpgltf.core/1.0.0-alpha0023",
+      "hashPath": "sharpgltf.core.1.0.0-alpha0023.nupkg.sha512"
+    },
+    "SharpGLTF.Toolkit/1.0.0-alpha0023": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9umelLunAhr+Jj66GDDFrJlO5MQ0pZXRSZk3SfAeZD/iKu/qz7Nlpnh+e8IKqJI8DyU8jHCI9v6HFjazZiBfsQ==",
+      "path": "sharpgltf.toolkit/1.0.0-alpha0023",
+      "hashPath": "sharpgltf.toolkit.1.0.0-alpha0023.nupkg.sha512"
     },
     "SkiaSharp/2.88.8": {
       "type": "package",
@@ -1721,6 +1801,20 @@
       "path": "system.text.encoding.extensions/4.3.0",
       "hashPath": "system.text.encoding.extensions.4.3.0.nupkg.sha512"
     },
+    "System.Text.Encodings.Web/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OP6umVGxc0Z0MvZQBVigj4/U31Pw72ITihDWP9WiWDm+q5aoe0GaJivsfYGq53o6dxH7DcXWiCTl7+0o2CGdmg==",
+      "path": "system.text.encodings.web/7.0.0",
+      "hashPath": "system.text.encodings.web.7.0.0.nupkg.sha512"
+    },
+    "System.Text.Json/7.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/LZf/JrGyilojqwpaywb+sSz8Tew7ij4K/Sk+UW8AKfAK7KRhR6mKpKtTm06cYA7bCpGTWfYksIW+mVsdxPegQ==",
+      "path": "system.text.json/7.0.2",
+      "hashPath": "system.text.json.7.0.2.nupkg.sha512"
+    },
     "System.Text.RegularExpressions/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1796,13 +1890,13 @@
       "serviceable": false,
       "sha512": ""
     },
-    "EpicManifestParser/1.2.70-temp": {
+    "CUE4Parse-Conversion/1.1.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "CUE4Parse-Conversion/1.1.1.0": {
-      "type": "reference",
+    "EpicManifestParser/1.2.70-temp": {
+      "type": "project",
       "serviceable": false,
       "sha512": ""
     }

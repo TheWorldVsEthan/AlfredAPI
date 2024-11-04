@@ -79,6 +79,19 @@
           }
         }
       },
+      "FFMpegCore/5.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Instances": "3.0.0",
+          "System.Text.Json": "7.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/FFMpegCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FFMpegCore.dll": {}
+        }
+      },
       "GenericReader/1.0.3": {
         "type": "package",
         "compile": {
@@ -95,6 +108,22 @@
         },
         "runtime": {
           "lib/netstandard2.0/UE4Config.dll": {}
+        }
+      },
+      "Instances/3.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Instances.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Instances.dll": {}
+        },
+        "contentFiles": {
+          "contentFiles/any/any/_._": {
+            "buildAction": "None",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          }
         }
       },
       "K4os.Compression.LZ4/1.3.8": {
@@ -507,6 +536,35 @@
         "runtime": {
           "lib/netstandard1.1/SharpDX.dll": {
             "related": ".pdb"
+          }
+        }
+      },
+      "SharpGLTF.Core/1.0.0-alpha0023": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/SharpGLTF.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/SharpGLTF.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "SharpGLTF.Toolkit/1.0.0-alpha0023": {
+        "type": "package",
+        "dependencies": {
+          "SharpGLTF.Core": "1.0.0-alpha0023"
+        },
+        "compile": {
+          "lib/net5.0/SharpGLTF.Toolkit.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/SharpGLTF.Toolkit.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -1624,6 +1682,47 @@
           }
         }
       },
+      "System.Text.Encodings.Web/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Text.Encodings.Web.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Text.Encodings.Web.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/browser/lib/net7.0/System.Text.Encodings.Web.dll": {
+            "assetType": "runtime",
+            "rid": "browser"
+          }
+        }
+      },
+      "System.Text.Json/7.0.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Encodings.Web": "7.0.0"
+        },
+        "compile": {
+          "lib/net7.0/System.Text.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Text.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/System.Text.Json.targets": {}
+        }
+      },
       "System.Text.RegularExpressions/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1817,6 +1916,22 @@
           "bin/placeholder/CUE4Parse.dll": {}
         }
       },
+      "CUE4Parse-Conversion/1.1.1": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "CUE4Parse": "1.1.1",
+          "SharpGLTF.Core": "1.0.0-alpha0023",
+          "SharpGLTF.Toolkit": "1.0.0-alpha0023",
+          "SkiaSharp": "2.88.8"
+        },
+        "compile": {
+          "bin/placeholder/CUE4Parse-Conversion.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CUE4Parse-Conversion.dll": {}
+        }
+      },
       "EpicManifestParser/1.2.70-temp": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -1899,6 +2014,19 @@
         "lib/netstandard2.0/DotNetZip.xml"
       ]
     },
+    "FFMpegCore/5.1.0": {
+      "sha512": "cCzfCElrq9IziByiho3oeK/T2hDfM0jjMQmo22cLoAt7bptNNhEiRhF9X0lKwLBoK9vjZKn06+gaUfbfmS9m3Q==",
+      "type": "package",
+      "path": "ffmpegcore/5.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "ffmpegcore.5.1.0.nupkg.sha512",
+        "ffmpegcore.nuspec",
+        "lib/netstandard2.0/FFMpegCore.dll"
+      ]
+    },
     "GenericReader/1.0.3": {
       "sha512": "8h3+nKDQqIwT9gw92oqLmTLPRIQ811EwcwQjwTbX8BKPXUzz5t8JNr/JDI8I0/563FX5Psjzwqm9HgXJZ0f0bQ==",
       "type": "package",
@@ -1924,6 +2052,20 @@
         "infrablack.ue4config.0.7.2.97.nupkg.sha512",
         "infrablack.ue4config.nuspec",
         "lib/netstandard2.0/UE4Config.dll"
+      ]
+    },
+    "Instances/3.0.0": {
+      "sha512": "wlZ0V+S7X7kMKbjC7EZJf5A1FNlldQrS0tKMNXP1Ued/6XCo6t5kpFDS3X72cd+SGaX+q+FOlWO7r18GlxcKAQ==",
+      "type": "package",
+      "path": "instances/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/README.md",
+        "contentFiles/any/netstandard2.0/README.md",
+        "instances.3.0.0.nupkg.sha512",
+        "instances.nuspec",
+        "lib/netstandard2.0/Instances.dll"
       ]
     },
     "K4os.Compression.LZ4/1.3.8": {
@@ -2468,6 +2610,42 @@
         "lib/uap10.0/SharpDX.pri",
         "sharpdx.4.2.0.nupkg.sha512",
         "sharpdx.nuspec"
+      ]
+    },
+    "SharpGLTF.Core/1.0.0-alpha0023": {
+      "sha512": "MmFWb+8a187XKC4oEhZrAvpqB8Cs2Ma6cK87HNn8P91aIETSRVBTVHXcECE4BFk0gueAoooiBCyCdSdUm9fnrA==",
+      "type": "package",
+      "path": "sharpgltf.core/1.0.0-alpha0023",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "glTF2Sharp.png",
+        "lib/net5.0/SharpGLTF.Core.dll",
+        "lib/net5.0/SharpGLTF.Core.xml",
+        "lib/netcoreapp3.1/SharpGLTF.Core.dll",
+        "lib/netcoreapp3.1/SharpGLTF.Core.xml",
+        "lib/netstandard2.0/SharpGLTF.Core.dll",
+        "lib/netstandard2.0/SharpGLTF.Core.xml",
+        "sharpgltf.core.1.0.0-alpha0023.nupkg.sha512",
+        "sharpgltf.core.nuspec"
+      ]
+    },
+    "SharpGLTF.Toolkit/1.0.0-alpha0023": {
+      "sha512": "9umelLunAhr+Jj66GDDFrJlO5MQ0pZXRSZk3SfAeZD/iKu/qz7Nlpnh+e8IKqJI8DyU8jHCI9v6HFjazZiBfsQ==",
+      "type": "package",
+      "path": "sharpgltf.toolkit/1.0.0-alpha0023",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "glTF2Sharp.png",
+        "lib/net5.0/SharpGLTF.Toolkit.dll",
+        "lib/net5.0/SharpGLTF.Toolkit.xml",
+        "lib/netcoreapp3.1/SharpGLTF.Toolkit.dll",
+        "lib/netcoreapp3.1/SharpGLTF.Toolkit.xml",
+        "lib/netstandard2.0/SharpGLTF.Toolkit.dll",
+        "lib/netstandard2.0/SharpGLTF.Toolkit.xml",
+        "sharpgltf.toolkit.1.0.0-alpha0023.nupkg.sha512",
+        "sharpgltf.toolkit.nuspec"
       ]
     },
     "SkiaSharp/2.88.8": {
@@ -5409,6 +5587,108 @@
         "system.text.encoding.extensions.nuspec"
       ]
     },
+    "System.Text.Encodings.Web/7.0.0": {
+      "sha512": "OP6umVGxc0Z0MvZQBVigj4/U31Pw72ITihDWP9WiWDm+q5aoe0GaJivsfYGq53o6dxH7DcXWiCTl7+0o2CGdmg==",
+      "type": "package",
+      "path": "system.text.encodings.web/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Text.Encodings.Web.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Text.Encodings.Web.targets",
+        "lib/net462/System.Text.Encodings.Web.dll",
+        "lib/net462/System.Text.Encodings.Web.xml",
+        "lib/net6.0/System.Text.Encodings.Web.dll",
+        "lib/net6.0/System.Text.Encodings.Web.xml",
+        "lib/net7.0/System.Text.Encodings.Web.dll",
+        "lib/net7.0/System.Text.Encodings.Web.xml",
+        "lib/netstandard2.0/System.Text.Encodings.Web.dll",
+        "lib/netstandard2.0/System.Text.Encodings.Web.xml",
+        "runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll",
+        "runtimes/browser/lib/net6.0/System.Text.Encodings.Web.xml",
+        "runtimes/browser/lib/net7.0/System.Text.Encodings.Web.dll",
+        "runtimes/browser/lib/net7.0/System.Text.Encodings.Web.xml",
+        "system.text.encodings.web.7.0.0.nupkg.sha512",
+        "system.text.encodings.web.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Text.Json/7.0.2": {
+      "sha512": "/LZf/JrGyilojqwpaywb+sSz8Tew7ij4K/Sk+UW8AKfAK7KRhR6mKpKtTm06cYA7bCpGTWfYksIW+mVsdxPegQ==",
+      "type": "package",
+      "path": "system.text.json/7.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "README.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "analyzers/dotnet/roslyn3.11/cs/System.Text.Json.SourceGeneration.dll",
+        "analyzers/dotnet/roslyn3.11/cs/cs/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/de/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/es/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/fr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/it/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ja/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ko/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/pl/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/pt-BR/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ru/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/tr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/zh-Hans/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/zh-Hant/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/System.Text.Json.SourceGeneration.dll",
+        "analyzers/dotnet/roslyn4.0/cs/cs/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/de/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/es/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/fr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/it/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ja/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ko/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/pl/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/pt-BR/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ru/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/tr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/zh-Hans/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/zh-Hant/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/System.Text.Json.SourceGeneration.dll",
+        "analyzers/dotnet/roslyn4.4/cs/cs/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/de/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/es/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/fr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/it/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ja/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ko/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pl/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pt-BR/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ru/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/tr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hans/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hant/System.Text.Json.SourceGeneration.resources.dll",
+        "buildTransitive/net461/System.Text.Json.targets",
+        "buildTransitive/net462/System.Text.Json.targets",
+        "buildTransitive/net6.0/System.Text.Json.targets",
+        "buildTransitive/netcoreapp2.0/System.Text.Json.targets",
+        "buildTransitive/netstandard2.0/System.Text.Json.targets",
+        "lib/net462/System.Text.Json.dll",
+        "lib/net462/System.Text.Json.xml",
+        "lib/net6.0/System.Text.Json.dll",
+        "lib/net6.0/System.Text.Json.xml",
+        "lib/net7.0/System.Text.Json.dll",
+        "lib/net7.0/System.Text.Json.xml",
+        "lib/netstandard2.0/System.Text.Json.dll",
+        "lib/netstandard2.0/System.Text.Json.xml",
+        "system.text.json.7.0.2.nupkg.sha512",
+        "system.text.json.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "System.Text.RegularExpressions/4.3.0": {
       "sha512": "RpT2DA+L660cBt1FssIE9CAGpLFdFPuheB7pLpKpn6ZXNby7jDERe8Ua/Ne2xGiwLVG2JOqziiaVCGDon5sKFA==",
       "type": "package",
@@ -5903,19 +6183,26 @@
     },
     "CUE4Parse/1.1.1": {
       "type": "project",
-      "path": "../../../../../FortnitePorting/FortnitePorting/Dependencies/CUE4Parse/CUE4Parse/CUE4Parse.csproj",
-      "msbuildProject": "../../../../../FortnitePorting/FortnitePorting/Dependencies/CUE4Parse/CUE4Parse/CUE4Parse.csproj"
+      "path": "../../../../Frameworks/CUE4Parse/CUE4Parse/CUE4Parse.csproj",
+      "msbuildProject": "../../../../Frameworks/CUE4Parse/CUE4Parse/CUE4Parse.csproj"
+    },
+    "CUE4Parse-Conversion/1.1.1": {
+      "type": "project",
+      "path": "../../../../Frameworks/CUE4Parse/CUE4Parse-Conversion/CUE4Parse-Conversion.csproj",
+      "msbuildProject": "../../../../Frameworks/CUE4Parse/CUE4Parse-Conversion/CUE4Parse-Conversion.csproj"
     },
     "EpicManifestParser/1.2.70-temp": {
       "type": "project",
-      "path": "../../../../EpicManifestParser/src/EpicManifestParser/EpicManifestParser.csproj",
-      "msbuildProject": "../../../../EpicManifestParser/src/EpicManifestParser/EpicManifestParser.csproj"
+      "path": "../../../../Frameworks/EpicManifestParser-4e9f44b620dac13736f964d2c6a82b2b7271aa63/src/EpicManifestParser/EpicManifestParser.csproj",
+      "msbuildProject": "../../../../Frameworks/EpicManifestParser-4e9f44b620dac13736f964d2c6a82b2b7271aa63/src/EpicManifestParser/EpicManifestParser.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "CUE4Parse >= 1.1.1",
+      "CUE4Parse-Conversion >= 1.1.1",
       "EpicManifestParser >= 1.2.70-temp",
+      "FFMpegCore >= 5.1.0",
       "Serilog >= 4.0.0",
       "Serilog.Sinks.Console >= 6.0.0",
       "SharpDX >= 4.2.0",
@@ -5949,11 +6236,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\ethan\\Desktop\\Coding\\EpicManifestParser\\src\\EpicManifestParser\\EpicManifestParser.csproj": {
-              "projectPath": "C:\\Users\\ethan\\Desktop\\Coding\\EpicManifestParser\\src\\EpicManifestParser\\EpicManifestParser.csproj"
+            "C:\\Users\\ethan\\Desktop\\Coding\\Frameworks\\CUE4Parse\\CUE4Parse-Conversion\\CUE4Parse-Conversion.csproj": {
+              "projectPath": "C:\\Users\\ethan\\Desktop\\Coding\\Frameworks\\CUE4Parse\\CUE4Parse-Conversion\\CUE4Parse-Conversion.csproj"
             },
-            "C:\\Users\\ethan\\Desktop\\FortnitePorting\\FortnitePorting\\Dependencies\\CUE4Parse\\CUE4Parse\\CUE4Parse.csproj": {
-              "projectPath": "C:\\Users\\ethan\\Desktop\\FortnitePorting\\FortnitePorting\\Dependencies\\CUE4Parse\\CUE4Parse\\CUE4Parse.csproj"
+            "C:\\Users\\ethan\\Desktop\\Coding\\Frameworks\\CUE4Parse\\CUE4Parse\\CUE4Parse.csproj": {
+              "projectPath": "C:\\Users\\ethan\\Desktop\\Coding\\Frameworks\\CUE4Parse\\CUE4Parse\\CUE4Parse.csproj"
+            },
+            "C:\\Users\\ethan\\Desktop\\Coding\\Frameworks\\EpicManifestParser-4e9f44b620dac13736f964d2c6a82b2b7271aa63\\src\\EpicManifestParser\\EpicManifestParser.csproj": {
+              "projectPath": "C:\\Users\\ethan\\Desktop\\Coding\\Frameworks\\EpicManifestParser-4e9f44b620dac13736f964d2c6a82b2b7271aa63\\src\\EpicManifestParser\\EpicManifestParser.csproj"
             }
           }
         }
@@ -5973,6 +6263,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "FFMpegCore": {
+            "target": "Package",
+            "version": "[5.1.0, )"
+          },
           "Serilog": {
             "target": "Package",
             "version": "[4.0.0, )"

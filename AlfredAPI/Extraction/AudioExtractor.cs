@@ -4,6 +4,7 @@ using AlfredAPI.Extensions;
 using CUE4Parse_Conversion.Sounds;
 using CUE4Parse.UE4.Assets.Exports;
 using CUE4Parse.UE4.Assets.Exports.Sound;
+using Newtonsoft.Json;
 
 namespace AlfredAPI.Extraction
 {
@@ -35,7 +36,6 @@ namespace AlfredAPI.Extraction
                 }
             }
         }
-
         public static bool CheckExport(UObject uobject)
         {
             switch (uobject)

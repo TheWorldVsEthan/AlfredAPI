@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FFMpegCore" Version="5.1.0" />
     <PackageReference Include="Serilog" Version="4.0.0" />
     <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
     <PackageReference Include="SharpDX" Version="4.2.0" />
@@ -15,14 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\FortnitePorting\FortnitePorting\Dependencies\CUE4Parse\CUE4Parse\CUE4Parse.csproj" />
-    <ProjectReference Include="..\..\..\..\EpicManifestParser\src\EpicManifestParser\EpicManifestParser.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="CUE4Parse-Conversion">
-      <HintPath>..\..\..\..\..\FortnitePorting\FortnitePorting\Dependencies\CUE4Parse\CUE4Parse-Conversion\obj\Debug\net8.0\CUE4Parse-Conversion.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\..\..\Frameworks\CUE4Parse\CUE4Parse-Conversion\CUE4Parse-Conversion.csproj" />
+    <ProjectReference Include="..\..\..\..\Frameworks\CUE4Parse\CUE4Parse\CUE4Parse.csproj" />
+    <ProjectReference Include="..\..\..\..\Frameworks\EpicManifestParser-4e9f44b620dac13736f964d2c6a82b2b7271aa63\src\EpicManifestParser\EpicManifestParser.csproj" />
   </ItemGroup>
 
 </Project>

@@ -9,15 +9,16 @@ namespace AlfredAPI.Extensions
             // Currently Saves .BINKA, How Convert To .wave.exe?
             try
             {
+                // Create And Write Data To BINKA File
                 var stream = new FileStream(filePath + "." + ext, FileMode.Create, FileAccess.Write);
                 var writer = new BinaryWriter(stream);
                 writer.Write(data);
                 writer.Flush();
 
-                Log.Information($"Saved Audio: {filePath.Split('/').Last()} In Audios Folder!");
+                Log.Information($"Successfully Saved BINKA Audio File: {filePath.Split('/').Last()}!");
                 return true;
             }
-
+            
             catch (Exception e)
             {
 #if DEBUG

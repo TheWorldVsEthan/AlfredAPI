@@ -59,3 +59,7 @@ C:\Users\ethan\Desktop\Coding\Projects\C#\AlfredAPI\AlfredAPI\bin\Debug\net8.0\r
 C:\Users\ethan\Desktop\Coding\Projects\C#\AlfredAPI\AlfredAPI\bin\Debug\net8.0\CUE4Parse-Conversion.dll
 C:\Users\ethan\Desktop\Coding\Projects\C#\AlfredAPI\AlfredAPI\bin\Debug\net8.0\CUE4Parse-Conversion.pdb
 C:\Users\ethan\Desktop\Coding\Projects\C#\AlfredAPI\AlfredAPI\bin\Debug\net8.0\SharpDX.dll
+C:\Users\ethan\Desktop\Coding\Projects\C#\AlfredAPI\AlfredAPI\bin\Debug\net8.0\FFMpegCore.dll
+C:\Users\ethan\Desktop\Coding\Projects\C#\AlfredAPI\AlfredAPI\bin\Debug\net8.0\Instances.dll
+C:\Users\ethan\Desktop\Coding\Projects\C#\AlfredAPI\AlfredAPI\bin\Debug\net8.0\SharpGLTF.Core.dll
+C:\Users\ethan\Desktop\Coding\Projects\C#\AlfredAPI\AlfredAPI\bin\Debug\net8.0\SharpGLTF.Toolkit.dll
