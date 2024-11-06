@@ -1,4 +1,5 @@
 ﻿using Serilog;
+using System.Diagnostics;
 
 namespace AlfredAPI.Extensions
 {
@@ -6,17 +7,37 @@ namespace AlfredAPI.Extensions
     {
         public static bool saveAudio(string filePath, string ext, byte[] data)
         {
-            // Currently Saves .BINKA, How Convert To .wave.exe?
+            string binkadecPath = Path.Combine("C:\\Users\\ethan\\Desktop\\Coding\\Frameworks\\", "binkadec.exe");
+            if (!File.Exists(binkadecPath))
+                return false;
+
+            string wavFilePath = Path.ChangeExtension(filePath, ".wav");
+            string binkaFilePath = filePath + "." + ext;
+
             try
             {
-                // Create And Write Data To BINKA File
-                var stream = new FileStream(filePath + "." + ext, FileMode.Create, FileAccess.Write);
+                var stream = new FileStream(binkaFilePath, FileMode.Create, FileAccess.Write);
                 var writer = new BinaryWriter(stream);
                 writer.Write(data);
                 writer.Flush();
 
                 Log.Information($"Successfully Saved BINKA Audio File: {filePath.Split('/').Last()}!");
-                return true;
+                Log.Information("Working On BINKA To Wav Conversion...");
+
+                var binkadecProcess = Process.Start(new ProcessStartInfo
+                {
+                    FileName = binkadecPath,
+                    Arguments = $"-i \"{binkaFilePath}\" -o \"{wavFilePath}\"",
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                });
+
+                binkadecProcess.Start();
+                binkadecProcess?.WaitForExit(5000);
+                // File.Delete(binkaFilePath);
+
+                Log.Information($"Successfully Saved Wav Audio File: {wavFilePath.Split('/').Last()}!");
+                return binkadecProcess?.ExitCode == 0 && File.Exists(wavFilePath);
             }
             
             catch (Exception e)

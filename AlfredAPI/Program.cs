@@ -29,8 +29,8 @@ namespace AlfredAPI
             Int32 totalFileCount = Global.Provider.Files.Count;
             Log.Information($"Successfully Loaded: {totalFileCount} Files!");
 
-            // await CosmeticInfo.LoadAsset("FortniteGame/Content/Athena/Items/Cosmetics/Backpacks/BID_721_ScholarFemale"); // Really Just A Basic Example On How To Use CUE4Parse
-            // await AudioExtractor.LoadAudio("FortniteGame/Content/Athena/Sounds/Emotes/Cashier/Emote_Cashier.uasset");
+            // await CosmeticInfo.LoadAsset("FortniteGame/Content/Athena/Items/Cosmetics/Backpacks/BID_755_Hardwood_4KH3V");
+            await AudioExtractor.LoadAudio("FortniteGame/Content/Athena/Sounds/Emotes/KPopDance03/Emote_KPopDance03_Loop.uasset");
             // await logAllFiles();
             await Task.Delay(-1);
         }
