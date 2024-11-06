@@ -4,6 +4,7 @@ using AlfredAPI.AlfredAPI;
 using AlfredAPI.Properties;
 using Serilog.Sinks.SystemConsole.Themes;
 using AlfredAPI.Extraction;
+using CUE4Parse.FileProvider.Objects;
 
 namespace AlfredAPI
 {
@@ -29,8 +30,8 @@ namespace AlfredAPI
             Int32 totalFileCount = Global.Provider.Files.Count;
             Log.Information($"Successfully Loaded: {totalFileCount} Files!");
 
-            // await CosmeticInfo.LoadAsset("FortniteGame/Content/Athena/Items/Cosmetics/Backpacks/BID_755_Hardwood_4KH3V");
-            await AudioExtractor.LoadAudio("FortniteGame/Content/Athena/Sounds/Emotes/KPopDance03/Emote_KPopDance03_Loop.uasset");
+            // await CosmeticExtractor.LoadAsset("FortniteGame/Content/Athena/Items/Cosmetics/Backpacks/BID_755_Hardwood_4KH3V");
+            await AudioExtractor.LoadAudio("FortniteGame/Content/Athena/Sounds/Emotes/LemonCart/Emote_LemonCart_Music_Loop.uasset");
             // await logAllFiles();
             await Task.Delay(-1);
         }
@@ -39,13 +40,13 @@ namespace AlfredAPI
         {
             foreach (var file in Global.Provider.Files)
             {
-                if (file.Value.ToString().StartsWith("FortniteGame/Content/Athena/Sounds/Emotes/"))
+                string fileValue = file.Value.ToString();
+                if (fileValue.StartsWith("FortniteGame/Content/Athena/Sounds/Emotes/"))
                 {
-                    var gameFile = file.Value.ToString();
-                    //var allObjects = Global.Provider.LoadAllObjects(gameFile);
+                    // var allObjects = Global.Provider.LoadAllObjects(fileValue);
                     // var fullJson = JsonConvert.SerializeObject(allObjects, Formatting.Indented);
                     // Console.WriteLine(fullJson);
-                    Console.WriteLine("Loaded: " + gameFile);
+                    Console.WriteLine("Loaded: " + fileValue);
                 }
             }
         }

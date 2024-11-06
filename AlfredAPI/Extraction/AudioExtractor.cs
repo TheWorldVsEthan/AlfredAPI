@@ -4,7 +4,6 @@ using AlfredAPI.Extensions;
 using CUE4Parse_Conversion.Sounds;
 using CUE4Parse.UE4.Assets.Exports;
 using CUE4Parse.UE4.Assets.Exports.Sound;
-using Newtonsoft.Json;
 
 namespace AlfredAPI.Extraction
 {
@@ -13,6 +12,8 @@ namespace AlfredAPI.Extraction
     {
         public static async Task LoadAudio(string assetPath)
         {
+            string newAssetPath = null;
+
             // If No Asset Path Return Error
             if (assetPath == null)
                 Log.Error("Invalid Asset Path!");
@@ -20,7 +21,9 @@ namespace AlfredAPI.Extraction
             else
             {
                 // Try To Load The Object, If False Return Error
-                var newAssetPath = assetPath.Replace(".uasset", "");
+                if (assetPath.EndsWith(".uasset"))
+                    newAssetPath = assetPath.Replace(".uasset", "");
+
                 var _obj = Global.Provider.TryLoadObject(newAssetPath, out UObject export);
                 if (export == null)
                     Log.Error($"Failed To Locate: {newAssetPath}");
