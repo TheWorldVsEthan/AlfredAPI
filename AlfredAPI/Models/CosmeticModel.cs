@@ -6,9 +6,9 @@ using CUE4Parse.UE4.Objects.UObject;
 using CUE4Parse.UE4.Objects.Core.i18N;
 using CUE4Parse.UE4.Assets.Exports.Texture;
 using AlfredAPI.Properties;
-using CUE4Parse_Conversion.Textures;
 using Serilog;
 using SkiaSharp;
+using CUE4Parse_Conversion.Textures;
 
 namespace AlfredAPI.Models
 {
@@ -56,8 +56,6 @@ namespace AlfredAPI.Models
                         {
                             Icon = SKImage.FromBitmap(
                                 SKBitmap.Decode(cosmeticIcon.Decode()?.Encode(SKEncodedImageFormat.Png, 100)));
-                            
-                            
                         }
 
                         catch (Exception ex)
@@ -84,7 +82,7 @@ namespace AlfredAPI.Models
                         {
                             Icon = SKImage.FromBitmap(
                                 SKBitmap.Decode(cosmeticIcon.Decode()?.Encode(SKEncodedImageFormat.Png, 100)));
-                            
+
                         }
 
                         catch (Exception ex)
@@ -103,12 +101,13 @@ namespace AlfredAPI.Models
         }
     }
 
+
     public abstract class ICosmetic
     {
         public string DisplayName { get; protected set; }
         public string Description { get; protected set; }
         public string ShortDescription { get; set; }
-        
+
         public string ExportType { get; set; }
 
         public FPackageIndex Series { get; set; }
@@ -117,9 +116,8 @@ namespace AlfredAPI.Models
         public string imagePath { get; set; }
 
         public SKImage Icon { get; set; }
-        
-        public SKImage Image { get; set; }
 
+        public SKImage Image { get; set; }
         // Tags And Other Stuff Will Be Added Later! (Or You Could Add It To A Commit) If You Want It Faster!
     }
 }

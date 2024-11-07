@@ -55,11 +55,9 @@ namespace AlfredAPI.AlfredAPI.Services
 
             p.MappingsContainer = new FileUsmapTypeMappingsProvider(mappingPath);
 
-            // p.PostMount();
             await p.MountAsync();
             logger.Information($"Successfully Mounted!");
 
-            // p.LoadLocalization(ELanguage.English); Default Language Is English
             logger.Information($"Successfully Loaded Localization!");
 
             p.LoadVirtualPaths();

@@ -27,9 +27,9 @@ namespace AlfredAPI.AlfredAPI
             if (aes == null) return;
 
 
-            foreach (var (guid, key) in aes) 
+            foreach (var (guid, key) in aes)
             {
-                await Global.Provider?.SubmitKeyAsync(guid, key)!; 
+                await Global.Provider?.SubmitKeyAsync(guid, key)!;
             }
         }
 

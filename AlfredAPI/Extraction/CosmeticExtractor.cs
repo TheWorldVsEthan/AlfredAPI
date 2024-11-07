@@ -1,14 +1,12 @@
 ﻿using Serilog;
 using AlfredAPI.Models;
 using AlfredAPI.AlfredAPI;
-using AlfredAPI.Properties;
-using CUE4Parse_Conversion.Textures;
-using CUE4Parse.GameTypes.FN.Enums;
 using CUE4Parse.UE4.Assets.Exports;
-using CUE4Parse.UE4.Assets.Exports.Texture;
+using AlfredAPI.Properties;
+using SkiaSharp;
+using CUE4Parse.GameTypes.FN.Enums;
 using CUE4Parse.UE4.Assets.Objects;
 using CUE4Parse.UE4.Objects.Core.Math;
-using SkiaSharp;
 
 namespace AlfredAPI.Extraction
 {
@@ -39,7 +37,7 @@ namespace AlfredAPI.Extraction
                     Console.WriteLine("ShortDescription: " + cos.ShortDescription);
                     Console.WriteLine("Rarity: " + cos.PreviewRarity);
                     Console.WriteLine("Icon Path: " + cos.imagePath);
-                    
+
                     // Generate Image
                     var image = GenerateImage(cos);
                     if (image != null)
@@ -47,8 +45,6 @@ namespace AlfredAPI.Extraction
                         // Save Icon To Exports Folder
                         await SaveIcon(image, cos.DisplayName);
                     }
-                    // Save Icon To Exports Folder
-                  //  await SaveIcon(cos.Icon, cos.DisplayName);
                 }
             }
         }
@@ -56,7 +52,7 @@ namespace AlfredAPI.Extraction
         // MEMORY SAFE PRIORITY!!!!!!
         private static async Task SaveIcon(SKImage? icon, string displayName)
         {
-            
+
             // Save Icon To Exports Folder
             if (icon != null)
             {
@@ -72,13 +68,14 @@ namespace AlfredAPI.Extraction
                 }
                 catch (Exception ex)
                 {
-                    Log.Error($"Failed to save icon to {path}: {ex.Message}");
+                    Log.Error($"Failed To Save Icon To: {path}: {ex.Message}");
                 }
             }
         }
 
         private static SKImage? GenerateImage(CosmeticModel cosmetic)
         {
+            // Create Canvas
             var info = new SKImageInfo(1024, 1024);
             using var surface = SKSurface.Create(info);
             var canvas = surface.Canvas;
@@ -86,9 +83,11 @@ namespace AlfredAPI.Extraction
             using var background = new SKPaint();
             using var card = new SKPaint();
 
+            // TryLoad RarirtData
             if (!Global.Provider.TryLoadObject("fortnitegame/content/balance/raritydata.raritydata",
                     out UObject rarityData)) return null;
-            
+
+            // Rarties
             var idx = EFortRarity.Uncommon;
             switch (cosmetic.Rarity)
             {
@@ -122,6 +121,7 @@ namespace AlfredAPI.Extraction
                     break;
             }
 
+            // Get And Paint Colors
             if (rarityData.GetByIndex<FStructFallback>((int)idx) is { } data &&
                 data.TryGetValue(out FLinearColor color1, "Color1") &&
                 data.TryGetValue(out FLinearColor color2, "Color2") &&
@@ -134,16 +134,35 @@ namespace AlfredAPI.Extraction
                     null,
                     SKShaderTileMode.Clamp
                 );
+
                 card.Color = SKColor.Parse(color2.Hex);
                 card.StrokeWidth = 15;
                 card.Style = SKPaintStyle.Stroke;
             }
-            
+
+            // Draw Background And Icon
             canvas.DrawRect(info.Rect, background);
             canvas.DrawImage(cosmetic.Icon, new SKRect(0, 0, 1024, 1024), new SKPaint());
-            
+
+            // Setup Paint Object For DisplayName And Description
+            // var paint = new SKPaint
+            // {
+                // Color = SKColors.White,
+                // TextSize = 60,
+                // IsAntialias = true,
+                // TextAlign = SKTextAlign.Center,
+                // Typeface = SKTypeface.FromFamilyName("Arial", SKFontStyle.Bold)
+            // };
+
+            // Register Fortnite Font
+            // string fontFilePath = "C:\\Users\\ethan\\Desktop\\Coding\\Projects\\C#\\AlfredAPI\\AlfredAPI\\Resources\\BurbankBigCondensed-Bold.ttf"; // Will Change To Auto Detect Later On
+            // var typeface = SKTypeface.FromFile(fontFilePath);
+            // paint.Typeface = typeface;
+
+            // Draw DisplayName 
+            // canvas.DrawText(cosmetic.DisplayName, info.Rect.MidX, 900, paint);
+
             cosmetic.Image = surface.Snapshot();
-            
             return cosmetic.Image;
         }
     }

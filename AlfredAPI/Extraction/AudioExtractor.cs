@@ -4,6 +4,7 @@ using AlfredAPI.Extensions;
 using CUE4Parse_Conversion.Sounds;
 using CUE4Parse.UE4.Assets.Exports;
 using CUE4Parse.UE4.Assets.Exports.Sound;
+using AlfredAPI.Properties;
 
 namespace AlfredAPI.Extraction
 {
@@ -51,7 +52,7 @@ namespace AlfredAPI.Extraction
                         return false;
 
                     Global.soundWave = audio; // So We Can Access "audio.Name" Globally (If Needed In The Future)
-                    return AudioExtensions.saveAudio(Path.Combine("C:\\Users\\ethan\\Desktop\\AlfredTesting", audio.Name), format, audioData);
+                    return AudioExtensions.saveAudio(Path.Combine(Settings.exportsFolder, audio.Name), format, audioData);
                 default:
                     return true;
             }

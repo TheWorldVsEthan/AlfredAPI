@@ -25,23 +25,18 @@ namespace AlfredAPI
             Manager? manager = new Manager();
             await manager.StartAsync();
 
-            // UI
-            Console.Clear();
-            Console.WriteLine("  Welcome To AlfredAPI!");
-
             // Is better to create a folder path for the exports folder
             var settingFolder = Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), "Exports"));
             Settings.exportsFolder = settingFolder.FullName;
-            
 
-            Console.WriteLine($"  Exports Will be Sent To: {Settings.exportsFolder}");
-            Console.Clear();
-
+            // UI
+            Console.Clear(); // Fresh Console
             Console.WriteLine("  Welcome To AlfredAPI!");
+            Console.WriteLine($"  Exports Will be Sent To: {Settings.exportsFolder}");
+
             Console.WriteLine("  Please Select From The Following Options!");
-            Console.WriteLine("  1: Extract Cosmetic JSON Data(Currently Logs Parsed Data To Console And Saves Texture2D To Exports Folder!)");
-            // Console.WriteLine("  2: Extract Cosmetic Image");
-            // Console.WriteLine("  3: Extract Audio(Only Supports USoundWave ATM)");
+            Console.WriteLine("  1: Extract Cosmetic Image(Also Writes Basic Data To Console)");
+            Console.WriteLine("  2: Extract Audio(Currently Only Supports USoundWave)");
 
             string assetPath;
             switch (Console.ReadLine())
@@ -51,7 +46,14 @@ namespace AlfredAPI
                     assetPath = Console.ReadLine()!.ToString();
                     await CosmeticExtractor.LoadAsset(assetPath);
                     break;
-                
+
+                case "2":
+                    Console.WriteLine("  Please Enter Asset Path: ");
+                    assetPath = Console.ReadLine()!.ToString();
+                    await AudioExtractor.LoadAudio(assetPath);
+                    break;
+
+
                 default:
                     Console.WriteLine("  Invalid Option!");
                     break;
