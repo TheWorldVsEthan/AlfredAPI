@@ -117,6 +117,8 @@ namespace AlfredAPI.Models
         public string imagePath { get; set; }
 
         public SKImage Icon { get; set; }
+        
+        public SKImage Image { get; set; }
 
         // Tags And Other Stuff Will Be Added Later! (Or You Could Add It To A Commit) If You Want It Faster!
     }
