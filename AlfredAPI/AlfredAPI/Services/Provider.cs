@@ -59,7 +59,7 @@ namespace AlfredAPI.AlfredAPI.Services
             await p.MountAsync();
             logger.Information($"Successfully Mounted!");
 
-            p.LoadLocalization(ELanguage.English);
+            // p.LoadLocalization(ELanguage.English); Default Language Is English
             logger.Information($"Successfully Loaded Localization!");
 
             p.LoadVirtualPaths();
@@ -72,7 +72,7 @@ namespace AlfredAPI.AlfredAPI.Services
         // TANK YOU https://github.com/TheNaeem/Solitude/blob/master/Solitude/Managers/Core.cs#L125
         public static async Task OodleInit()
         {
-            var oodlePath = Path.Combine("C:\\Users\\ethan\\Desktop\\Coding\\Projects\\C#\\AlfredAPI\\AlfredAPI\\bin\\Debug\\net8.0", OodleHelper.OODLE_DLL_NAME); // Chage These Paths!
+            var oodlePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, OodleHelper.OODLE_DLL_NAME);
             if (!File.Exists(oodlePath))
             {
                 await OodleHelper.DownloadOodleDllAsync(oodlePath);
@@ -84,7 +84,7 @@ namespace AlfredAPI.AlfredAPI.Services
         // Once Again, TANK YOU https://github.com/TheNaeem/Solitude/blob/master/Solitude/Managers/Core.cs#L136
         public static async Task ZLibInit()
         {
-            var dllPath = Path.Combine("C:\\Users\\ethan\\Desktop\\Coding\\Projects\\C#\\AlfredAPI\\AlfredAPI\\bin\\Debug\\net8.0", ZlibHelper.DLL_NAME); // Chage These Paths!
+            var dllPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, ZlibHelper.DLL_NAME);
             if (!File.Exists(dllPath))
             {
                 await ZlibHelper.DownloadDllAsync(dllPath);

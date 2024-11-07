@@ -6,7 +6,9 @@ using CUE4Parse.UE4.Objects.UObject;
 using CUE4Parse.UE4.Objects.Core.i18N;
 using CUE4Parse.UE4.Assets.Exports.Texture;
 using AlfredAPI.Properties;
+using CUE4Parse_Conversion.Textures;
 using Serilog;
+using SkiaSharp;
 
 namespace AlfredAPI.Models
 {
@@ -48,15 +50,14 @@ namespace AlfredAPI.Models
                     var largeIconPath = isl.NonConstStruct.Get<FSoftObjectPath>("LargeIcon").AssetPathName.ToString();
                     imagePath = largeIconPath;
 
-                    if (Global.Provider.TryLoadObject(largeIconPath, out UTexture2D a))
+                    if (Global.Provider.TryLoadObject(largeIconPath, out UTexture2D cosmeticIcon))
                     {
                         try
                         {
-                            if (a != null)
-                            {
-                                a?.SaveToDisk(Settings.exportsFolder);
-                                Log.Information("Successfully Saved: " + package.Name + " To " + Settings.exportsFolder);
-                            }
+                            Icon = SKImage.FromBitmap(
+                                SKBitmap.Decode(cosmeticIcon.Decode()?.Encode(SKEncodedImageFormat.Png, 100)));
+                            
+                            
                         }
 
                         catch (Exception ex)
@@ -77,15 +78,13 @@ namespace AlfredAPI.Models
                     var iconPath = isi.NonConstStruct.Get<FSoftObjectPath>("Icon").AssetPathName.ToString();
                     imagePath = iconPath;
 
-                    if (Global.Provider.TryLoadObject(iconPath, out UTexture2D a))
+                    if (Global.Provider.TryLoadObject(iconPath, out UTexture2D cosmeticIcon))
                     {
                         try
                         {
-                            if (a != null)
-                            {
-                                a?.SaveToDisk(Settings.exportsFolder);
-                                Log.Information("Successfully Saved: " + package.Name + " To " + Settings.exportsFolder);
-                            }
+                            Icon = SKImage.FromBitmap(
+                                SKBitmap.Decode(cosmeticIcon.Decode()?.Encode(SKEncodedImageFormat.Png, 100)));
+                            
                         }
 
                         catch (Exception ex)
@@ -117,7 +116,7 @@ namespace AlfredAPI.Models
         public string Rarity { get; set; }
         public string imagePath { get; set; }
 
-        // public SKImage Icon { get; set; }
+        public SKImage Icon { get; set; }
 
         // Tags And Other Stuff Will Be Added Later! (Or You Could Add It To A Commit) If You Want It Faster!
     }

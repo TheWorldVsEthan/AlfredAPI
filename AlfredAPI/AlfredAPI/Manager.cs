@@ -29,7 +29,7 @@ namespace AlfredAPI.AlfredAPI
 
             foreach (var (guid, key) in aes) 
             {
-                Global.Provider?.SubmitKey(guid, key); 
+                await Global.Provider?.SubmitKeyAsync(guid, key)!; 
             }
         }
 

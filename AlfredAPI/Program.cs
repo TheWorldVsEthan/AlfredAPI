@@ -28,10 +28,11 @@ namespace AlfredAPI
             // UI
             Console.Clear();
             Console.WriteLine("  Welcome To AlfredAPI!");
-            Console.WriteLine("  Please Enter Exports Folder Path: ");
 
-            string exportsFolder = Console.ReadLine().ToString();
-            Settings.exportsFolder = exportsFolder;
+            // Is better to create a folder path for the exports folder
+            var settingFolder = Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), "Exports"));
+            Settings.exportsFolder = settingFolder.FullName;
+            
 
             Console.WriteLine($"  Exports Will be Sent To: {Settings.exportsFolder}");
             Console.Clear();
@@ -41,15 +42,19 @@ namespace AlfredAPI
             Console.WriteLine("  1: Extract Cosmetic JSON Data(Currently Logs Parsed Data To Console And Saves Texture2D To Exports Folder!)");
             // Console.WriteLine("  2: Extract Cosmetic Image");
             // Console.WriteLine("  3: Extract Audio(Only Supports USoundWave ATM)");
-            
+
+            string assetPath;
             switch (Console.ReadLine())
             {
                 case "1":
                     Console.WriteLine("  Please Enter Asset Path: ");
-                    string assetPath = Console.ReadLine().ToString();
+                    assetPath = Console.ReadLine()!.ToString();
                     await CosmeticExtractor.LoadAsset(assetPath);
                     break;
-
+                
+                default:
+                    Console.WriteLine("  Invalid Option!");
+                    break;
             }
 
             // await CosmeticExtractor.LoadAsset("FortniteGame/Content/Athena/Items/Cosmetics/Backpacks/BID_755_Hardwood_4KH3V");
