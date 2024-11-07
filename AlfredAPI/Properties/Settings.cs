@@ -10,5 +10,7 @@ namespace AlfredAPI.Properties
         public static string Name = AppAssembly.GetName().Name!;
 
         public static string Environment = "Development";
+
+        public static string exportsFolder;
     }
 }

@@ -4,7 +4,6 @@ using AlfredAPI.AlfredAPI;
 using AlfredAPI.Properties;
 using Serilog.Sinks.SystemConsole.Themes;
 using AlfredAPI.Extraction;
-using CUE4Parse.FileProvider.Objects;
 
 namespace AlfredAPI
 {
@@ -26,12 +25,35 @@ namespace AlfredAPI
             Manager? manager = new Manager();
             await manager.StartAsync();
 
-            // Get Total Loaded File Count
-            Int32 totalFileCount = Global.Provider.Files.Count;
-            Log.Information($"Successfully Loaded: {totalFileCount} Files!");
+            // UI
+            Console.Clear();
+            Console.WriteLine("  Welcome To AlfredAPI!");
+            Console.WriteLine("  Please Enter Exports Folder Path: ");
+
+            string exportsFolder = Console.ReadLine().ToString();
+            Settings.exportsFolder = exportsFolder;
+
+            Console.WriteLine($"  Exports Will be Sent To: {Settings.exportsFolder}");
+            Console.Clear();
+
+            Console.WriteLine("  Welcome To AlfredAPI!");
+            Console.WriteLine("  Please Select From The Following Options!");
+            Console.WriteLine("  1: Extract Cosmetic JSON Data(Currently Logs Parsed Data To Console And Saves Texture2D To Exports Folder!)");
+            // Console.WriteLine("  2: Extract Cosmetic Image");
+            // Console.WriteLine("  3: Extract Audio(Only Supports USoundWave ATM)");
+            
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    Console.WriteLine("  Please Enter Asset Path: ");
+                    string assetPath = Console.ReadLine().ToString();
+                    await CosmeticExtractor.LoadAsset(assetPath);
+                    break;
+
+            }
 
             // await CosmeticExtractor.LoadAsset("FortniteGame/Content/Athena/Items/Cosmetics/Backpacks/BID_755_Hardwood_4KH3V");
-            await AudioExtractor.LoadAudio("FortniteGame/Content/Athena/Sounds/Emotes/LemonCart/Emote_LemonCart_Music_Loop.uasset");
+            // await AudioExtractor.LoadAudio("FortniteGame/Content/Athena/Sounds/Emotes/LemonCart/Emote_LemonCart_Music_Loop.uasset");
             // await logAllFiles();
             await Task.Delay(-1);
         }

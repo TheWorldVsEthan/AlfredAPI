@@ -39,6 +39,8 @@ namespace AlfredAPI.Extraction
                 }
             }
         }
+
+        // Only Supports USoundWave ATM!
         public static bool CheckExport(UObject uobject)
         {
             switch (uobject)

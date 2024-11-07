@@ -5,6 +5,8 @@ using CUE4Parse.UE4.Assets.Objects;
 using CUE4Parse.UE4.Objects.UObject;
 using CUE4Parse.UE4.Objects.Core.i18N;
 using CUE4Parse.UE4.Assets.Exports.Texture;
+using AlfredAPI.Properties;
+using Serilog;
 
 namespace AlfredAPI.Models
 {
@@ -23,7 +25,6 @@ namespace AlfredAPI.Models
 
             if (package.TryGetValue(out FText shortDescription, "ItemShortDescription", "ShortDescription", "UIDisplaySubName"))
                 ShortDescription = shortDescription.Text;
-
 
             // Rarity And Series
             if (package.TryGetValue(out FPackageIndex series, "Series"))
@@ -53,8 +54,9 @@ namespace AlfredAPI.Models
                         {
                             if (a != null)
                             {
-                                a?.SaveToDisk("C:\\Users\\ethan\\Desktop\\AlfredTesting"); // "C:\\Users\\ethan\\Desktop\\New folder" Is Just For Testing
-                            }                                                           // Will Make API Create "Exports" Folder
+                                a?.SaveToDisk(Settings.exportsFolder);
+                                Log.Information("Successfully Saved: " + package.Name + " To " + Settings.exportsFolder);
+                            }
                         }
 
                         catch (Exception ex)
@@ -81,8 +83,9 @@ namespace AlfredAPI.Models
                         {
                             if (a != null)
                             {
-                                a?.SaveToDisk("C:\\Users\\ethan\\Desktop\\AlfredTesting"); // "C:\\Users\\ethan\\Desktop\\New folder" Is Just For Testing
-                            }                                                           // Will Make API Create "Exports" Folder
+                                a?.SaveToDisk(Settings.exportsFolder);
+                                Log.Information("Successfully Saved: " + package.Name + " To " + Settings.exportsFolder);
+                            }
                         }
 
                         catch (Exception ex)
